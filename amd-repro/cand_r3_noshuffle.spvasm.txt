@@ -1,0 +1,468 @@
+; SPIR-V
+; Version: 1.6
+; Generator: Khronos SPIR-V Tools Assembler; 0
+; Bound: 394
+; Schema: 0
+               OpCapability ImageGatherExtended
+               OpCapability Shader
+               OpCapability GroupNonUniformShuffle
+               OpCapability SignedZeroInfNanPreserve
+               OpCapability GroupNonUniform
+               OpCapability GroupNonUniformBallot
+               OpCapability ImageQuery
+               OpCapability GroupNonUniformShuffleRelative
+               OpCapability SampledBuffer
+               OpExtension "SPV_KHR_float_controls"
+               OpExtension "SPV_KHR_storage_buffer_storage_class"
+          %1 = OpExtInstImport "GLSL.std.450"
+               OpMemoryModel Logical GLSL450
+               OpEntryPoint Fragment %2 "main" %3 %4 %5
+               OpExecutionMode %2 OriginUpperLeft
+               OpExecutionMode %2 SignedZeroInfNanPreserve 32
+               OpDecorate %3 Location 0
+               OpDecorate %_arr_float_uint_16384 ArrayStride 4
+               OpDecorate %_struct_7 Block
+               OpMemberDecorate %_struct_7 0 Offset 0
+               OpDecorate %4 Binding 7
+               OpDecorate %4 DescriptorSet 0
+               OpDecorate %_runtimearr_v4uint ArrayStride 16
+               OpDecorate %_struct_9 Block
+               OpMemberDecorate %_struct_9 0 Offset 0
+               OpDecorate %5 Binding 13
+               OpDecorate %5 DescriptorSet 0
+       %void = OpTypeVoid
+       %bool = OpTypeBool
+      %float = OpTypeFloat 32
+    %v2float = OpTypeVector %float 2
+    %v3float = OpTypeVector %float 3
+    %v4float = OpTypeVector %float 4
+       %uint = OpTypeInt 32 0
+     %v2uint = OpTypeVector %uint 2
+     %v4uint = OpTypeVector %uint 4
+%_ptr_Output_float = OpTypePointer Output %float
+       %true = OpConstantTrue %bool
+      %false = OpConstantFalse %bool
+     %uint_0 = OpConstant %uint 0
+    %float_0 = OpConstant %float 0
+%_ptr_Output_v4float = OpTypePointer Output %v4float
+ %uint_16384 = OpConstant %uint 16384
+%_arr_float_uint_16384 = OpTypeArray %float %uint_16384
+  %_struct_7 = OpTypeStruct %_arr_float_uint_16384
+%_ptr_Uniform__struct_7 = OpTypePointer Uniform %_struct_7
+%_ptr_Uniform_float = OpTypePointer Uniform %float
+  %uint_8192 = OpConstant %uint 8192
+%_runtimearr_v4uint = OpTypeRuntimeArray %v4uint
+  %_struct_9 = OpTypeStruct %_runtimearr_v4uint
+%_ptr_StorageBuffer__struct_9 = OpTypePointer StorageBuffer %_struct_9
+%_ptr_StorageBuffer_v4uint = OpTypePointer StorageBuffer %v4uint
+         %31 = OpTypeImage %float 2D 0 0 0 1 Unknown
+         %32 = OpTypeSampledImage %31
+         %33 = OpTypeImage %float 3D 0 0 0 1 Unknown
+         %34 = OpTypeSampledImage %33
+         %35 = OpTypeImage %float Cube 0 0 0 1 Unknown
+         %36 = OpTypeSampledImage %35
+         %37 = OpTypeFunction %void
+     %uint_3 = OpConstant %uint 3
+     %uint_1 = OpConstant %uint 1
+     %uint_2 = OpConstant %uint 2
+     %uint_5 = OpConstant %uint 5
+    %uint_17 = OpConstant %uint 17
+     %uint_9 = OpConstant %uint 9
+     %uint_4 = OpConstant %uint 4
+    %uint_16 = OpConstant %uint 16
+     %uint_8 = OpConstant %uint 8
+     %uint_6 = OpConstant %uint 6
+    %uint_18 = OpConstant %uint 18
+    %uint_10 = OpConstant %uint 10
+     %uint_7 = OpConstant %uint 7
+    %uint_11 = OpConstant %uint 11
+    %float_1 = OpConstant %float 1
+   %uint_149 = OpConstant %uint 149
+   %uint_145 = OpConstant %uint 145
+   %uint_148 = OpConstant %uint 148
+   %uint_161 = OpConstant %uint 161
+   %uint_144 = OpConstant %uint 144
+   %uint_157 = OpConstant %uint 157
+   %uint_150 = OpConstant %uint 150
+   %uint_146 = OpConstant %uint 146
+   %uint_156 = OpConstant %uint 156
+   %uint_151 = OpConstant %uint 151
+   %uint_160 = OpConstant %uint 160
+   %uint_141 = OpConstant %uint 141
+   %uint_158 = OpConstant %uint 158
+   %uint_147 = OpConstant %uint 147
+   %uint_162 = OpConstant %uint 162
+   %uint_140 = OpConstant %uint 140
+   %uint_153 = OpConstant %uint 153
+   %uint_163 = OpConstant %uint 163
+   %uint_159 = OpConstant %uint 159
+   %uint_142 = OpConstant %uint 142
+   %uint_152 = OpConstant %uint 152
+   %uint_154 = OpConstant %uint 154
+   %uint_143 = OpConstant %uint 143
+    %uint_74 = OpConstant %uint 74
+   %uint_155 = OpConstant %uint 155
+    %uint_75 = OpConstant %uint 75
+    %uint_56 = OpConstant %uint 56
+  %uint_1344 = OpConstant %uint 1344
+   %uint_168 = OpConstant %uint 168
+   %uint_336 = OpConstant %uint 336
+%uint_4294967292 = OpConstant %uint 4294967292
+    %uint_32 = OpConstant %uint 32
+    %uint_48 = OpConstant %uint 48
+    %uint_64 = OpConstant %uint 64
+%uint_4294967295 = OpConstant %uint 4294967295
+%uint_2147483648 = OpConstant %uint 2147483648
+   %uint_604 = OpConstant %uint 604
+%uint_1065353216 = OpConstant %uint 1065353216
+   %uint_597 = OpConstant %uint 597
+   %uint_592 = OpConstant %uint 592
+%uint_1060205080 = OpConstant %uint 1060205080
+%float_0_693147182 = OpConstant %float 0.693147182
+%float_2_14748365e_09 = OpConstant %float 2.14748365e+09
+%float_n2_14748365e_09 = OpConstant %float -2.14748365e+09
+   %uint_603 = OpConstant %uint 603
+   %uint_598 = OpConstant %uint 598
+   %uint_242 = OpConstant %uint 242
+   %uint_243 = OpConstant %uint 243
+%uint_3212902916 = OpConstant %uint 3212902916
+%float_n1_00787401 = OpConstant %float -1.00787401
+%uint_1073774850 = OpConstant %uint 1073774850
+%float_2_00787401 = OpConstant %float 2.00787401
+%uint_1049652929 = OpConstant %uint 1049652929
+%float_0_282094985 = OpConstant %float 0.282094985
+    %uint_51 = OpConstant %uint 51
+%uint_1083388723 = OpConstant %uint 1083388723
+%float_4_5999999 = OpConstant %float 4.5999999
+%uint_1073741824 = OpConstant %uint 1073741824
+   %uint_736 = OpConstant %uint 736
+   %uint_720 = OpConstant %uint 720
+    %uint_49 = OpConstant %uint 49
+    %uint_45 = OpConstant %uint 45
+    %uint_93 = OpConstant %uint 93
+%uint_925353388 = OpConstant %uint 925353388
+%float_9_99999975en06 = OpConstant %float 9.99999975e-06
+    %uint_44 = OpConstant %uint 44
+    %uint_50 = OpConstant %uint 50
+%uint_1042728670 = OpConstant %uint 1042728670
+%float_0_162867993 = OpConstant %float 0.162867993
+    %uint_46 = OpConstant %uint 46
+    %uint_53 = OpConstant %uint 53
+    %uint_52 = OpConstant %uint 52
+    %uint_54 = OpConstant %uint 54
+%uint_1049652923 = OpConstant %uint 1049652923
+%float_0_282094806 = OpConstant %float 0.282094806
+   %uint_595 = OpConstant %uint 595
+   %uint_593 = OpConstant %uint 593
+   %uint_594 = OpConstant %uint 594
+%uint_1056964608 = OpConstant %uint 1056964608
+  %float_0_5 = OpConstant %float 0.5
+%uint_4294967231 = OpConstant %uint 4294967231
+   %uint_728 = OpConstant %uint 728
+   %uint_128 = OpConstant %uint 128
+    %uint_80 = OpConstant %uint 80
+    %uint_96 = OpConstant %uint 96
+   %uint_112 = OpConstant %uint 112
+%uint_2147483647 = OpConstant %uint 2147483647
+  %uint_1296 = OpConstant %uint 1296
+   %uint_324 = OpConstant %uint 324
+    %float_2 = OpConstant %float 2
+%uint_1056582172 = OpConstant %uint 1056582172
+%float_0_488602519 = OpConstant %float 0.488602519
+    %uint_31 = OpConstant %uint 31
+%uint_1051117248 = OpConstant %uint 1051117248
+%float_0_325735092 = OpConstant %float 0.325735092
+   %uint_202 = OpConstant %uint 202
+   %uint_221 = OpConstant %uint 221
+%uint_1086918619 = OpConstant %uint 1086918619
+%float_6_28318548 = OpConstant %float 6.28318548
+%uint_1042479491 = OpConstant %uint 1042479491
+%float_0_159154937 = OpConstant %float 0.159154937
+   %uint_223 = OpConstant %uint 223
+   %uint_222 = OpConstant %uint 222
+    %uint_20 = OpConstant %uint 20
+%uint_1072216622 = OpConstant %uint 1072216622
+%uint_3209786460 = OpConstant %uint 3209786460
+%float_n0_818181753 = OpConstant %float -0.818181753
+%float_1_81818175 = OpConstant %float 1.81818175
+    %uint_21 = OpConstant %uint 21
+   %uint_201 = OpConstant %uint 201
+%uint_1050253722 = OpConstant %uint 1050253722
+%uint_1036831949 = OpConstant %uint 1036831949
+%float_0_100000001 = OpConstant %float 0.100000001
+%float_0_300000012 = OpConstant %float 0.300000012
+    %uint_22 = OpConstant %uint 22
+   %uint_244 = OpConstant %uint 244
+   %uint_245 = OpConstant %uint 245
+%uint_1061997773 = OpConstant %uint 1061997773
+%uint_3209481421 = OpConstant %uint 3209481421
+%float_n0_800000012 = OpConstant %float -0.800000012
+%uint_1067030938 = OpConstant %uint 1067030938
+%float_1_20000005 = OpConstant %float 1.20000005
+%float_0_800000012 = OpConstant %float 0.800000012
+%uint_1058417515 = OpConstant %uint 1058417515
+%float_0_586600006 = OpConstant %float 0.586600006
+%uint_1014350479 = OpConstant %uint 1014350479
+%float_0_0149999997 = OpConstant %float 0.0149999997
+%uint_1050216812 = OpConstant %uint 1050216812
+%float_0_298900008 = OpConstant %float 0.298900008
+%uint_1038764684 = OpConstant %uint 1038764684
+%float_0_114399999 = OpConstant %float 0.114399999
+%uint_1117391920 = OpConstant %uint 1117391920
+%float_77_0238037 = OpConstant %float 77.0238037
+%uint_3184315597 = OpConstant %uint 3184315597
+%float_n0_100000001 = OpConstant %float -0.100000001
+%uint_3235431694 = OpConstant %uint 3235431694
+%float_n6_77405453 = OpConstant %float -6.77405453
+%uint_1090045198 = OpConstant %uint 1090045198
+%float_7_77405453 = OpConstant %float 7.77405453
+   %uint_164 = OpConstant %uint 164
+   %uint_165 = OpConstant %uint 165
+   %uint_452 = OpConstant %uint 452
+%uint_1045220557 = OpConstant %uint 1045220557
+%float_0_200000003 = OpConstant %float 0.200000003
+    %uint_92 = OpConstant %uint 92
+    %uint_94 = OpConstant %uint 94
+%uint_1073741823 = OpConstant %uint 1073741823
+   %uint_596 = OpConstant %uint 596
+  %uint_1312 = OpConstant %uint 1312
+   %uint_328 = OpConstant %uint 328
+%uint_1086324736 = OpConstant %uint 1086324736
+%uint_3233808384 = OpConstant %uint 3233808384
+%uint_1088421888 = OpConstant %uint 1088421888
+    %float_7 = OpConstant %float 7
+   %float_n6 = OpConstant %float -6
+%uint_897988541 = OpConstant %uint 897988541
+%float_9_99999997en07 = OpConstant %float 9.99999997e-07
+%uint_3226013659 = OpConstant %uint 3226013659
+%float_n3_14159274 = OpConstant %float -3.14159274
+%uint_1051372203 = OpConstant %uint 1051372203
+%float_0_333333343 = OpConstant %float 0.333333343
+%uint_4294967196 = OpConstant %uint 4294967196
+ %uint_14912 = OpConstant %uint 14912
+ %uint_16544 = OpConstant %uint 16544
+ %uint_18128 = OpConstant %uint 18128
+%uint_981668463 = OpConstant %uint 981668463
+%float_0_00100000005 = OpConstant %float 0.00100000005
+%uint_3179460913 = OpConstant %uint 3179460913
+%float_n0_0638297871 = OpConstant %float -0.0638297871
+%uint_1074277267 = OpConstant %uint 1074277267
+%float_2_12765956 = OpConstant %float 2.12765956
+%uint_1022739087 = OpConstant %uint 1022739087
+%float_0_0299999993 = OpConstant %float 0.0299999993
+%uint_1059816735 = OpConstant %uint 1059816735
+%float_0_670000017 = OpConstant %float 0.670000017
+   %uint_255 = OpConstant %uint 255
+%uint_998277249 = OpConstant %uint 998277249
+%float_0_00392156886 = OpConstant %float 0.00392156886
+%uint_3145760897 = OpConstant %uint 3145760897
+%float_n0_00392156886 = OpConstant %float -0.00392156886
+   %uint_103 = OpConstant %uint 103
+%uint_953267991 = OpConstant %uint 953267991
+%float_9_99999975en05 = OpConstant %float 9.99999975e-05
+%uint_1085390937 = OpConstant %uint 1085390937
+%uint_3232874585 = OpConstant %uint 3232874585
+%uint_3235870220 = OpConstant %uint 3235870220
+%float_n6_98316002 = OpConstant %float -6.98316002
+%float_n5_55472994 = OpConstant %float -5.55472994
+ %float_0_25 = OpConstant %float 0.25
+%uint_1050868099 = OpConstant %uint 1050868099
+%float_0_318309873 = OpConstant %float 0.318309873
+%uint_1025758986 = OpConstant %uint 1025758986
+%float_0_0399999991 = OpConstant %float 0.0399999991
+%uint_1064682127 = OpConstant %uint 1064682127
+%float_0_959999979 = OpConstant %float 0.959999979
+   %uint_388 = OpConstant %uint 388
+%uint_3221225472 = OpConstant %uint 3221225472
+   %float_n2 = OpConstant %float -2
+%uint_1017370378 = OpConstant %uint 1017370378
+%float_0_0199999996 = OpConstant %float 0.0199999996
+%uint_3212836864 = OpConstant %uint 3212836864
+   %float_n1 = OpConstant %float -1
+%uint_1000593162 = OpConstant %uint 1000593162
+%float_0_00499999989 = OpConstant %float 0.00499999989
+%uint_1078530011 = OpConstant %uint 1078530011
+%float_3_14159274 = OpConstant %float 3.14159274
+  %uint_1328 = OpConstant %uint 1328
+   %uint_166 = OpConstant %uint 166
+   %uint_332 = OpConstant %uint 332
+%uint_1084372287 = OpConstant %uint 1084372287
+%uint_3231855935 = OpConstant %uint 3231855935
+%uint_1090942665 = OpConstant %uint 1090942665
+%float_8_40400028 = OpConstant %float 8.40400028
+%float_n5_06899977 = OpConstant %float -5.06899977
+   %uint_297 = OpConstant %uint 297
+%uint_3231402951 = OpConstant %uint 3231402951
+%float_n4_85300016 = OpConstant %float -4.85300016
+%uint_3190610408 = OpConstant %uint 3190610408
+%float_n0_168799996 = OpConstant %float -0.168799996
+%uint_1072861020 = OpConstant %uint 1072861020
+%float_1_89499998 = OpConstant %float 1.89499998
+   %uint_296 = OpConstant %uint 296
+%uint_1065190477 = OpConstant %uint 1065190477
+%float_0_9903 = OpConstant %float 0.9903
+   %uint_292 = OpConstant %uint 292
+   %uint_293 = OpConstant %uint 293
+   %uint_272 = OpConstant %uint 272
+%uint_3227948941 = OpConstant %uint 3227948941
+%float_n3_60299993 = OpConstant %float -3.60299993
+%uint_1076514259 = OpConstant %uint 1076514259
+%float_2_66100001 = OpConstant %float 2.66100001
+   %uint_257 = OpConstant %uint 257
+%uint_1071216853 = OpConstant %uint 1071216853
+%float_1_699 = OpConstant %float 1.699
+%uint_3204830777 = OpConstant %uint 3204830777
+%float_n0_522800028 = OpConstant %float -0.522800028
+%uint_1068742214 = OpConstant %uint 1068742214
+%float_1_40400004 = OpConstant %float 1.40400004
+%uint_1058717827 = OpConstant %uint 1058717827
+%float_0_604499996 = OpConstant %float 0.604499996
+%uint_1044811193 = OpConstant %uint 1044811193
+%float_0_193900004 = OpConstant %float 0.193900004
+   %uint_298 = OpConstant %uint 298
+   %uint_294 = OpConstant %uint 294
+   %uint_256 = OpConstant %uint 256
+   %uint_302 = OpConstant %uint 302
+   %uint_303 = OpConstant %uint 303
+   %uint_300 = OpConstant %uint 300
+   %uint_301 = OpConstant %uint 301
+   %uint_316 = OpConstant %uint 316
+   %uint_740 = OpConstant %uint 740
+   %uint_225 = OpConstant %uint 225
+%uint_961656599 = OpConstant %uint 961656599
+%float_0_000199999995 = OpConstant %float 0.000199999995
+%uint_1058417699 = OpConstant %uint 1058417699
+%float_0_586610973 = OpConstant %float 0.586610973
+%uint_1050217214 = OpConstant %uint 1050217214
+%float_0_298911989 = OpConstant %float 0.298911989
+   %uint_307 = OpConstant %uint 307
+   %uint_304 = OpConstant %uint 304
+%uint_1038775153 = OpConstant %uint 1038775153
+%float_0_114478 = OpConstant %float 0.114478
+   %uint_305 = OpConstant %uint 305
+%uint_3204448256 = OpConstant %uint 3204448256
+ %float_n0_5 = OpConstant %float -0.5
+%uint_1092616192 = OpConstant %uint 1092616192
+   %float_10 = OpConstant %float 10
+%uint_1027804209 = OpConstant %uint 1027804209
+%float_0_0476190485 = OpConstant %float 0.0476190485
+   %uint_306 = OpConstant %uint 306
+    %uint_24 = OpConstant %uint 24
+   %uint_107 = OpConstant %uint 107
+          %3 = OpVariable %_ptr_Output_v4float Output
+          %4 = OpVariable %_ptr_Uniform__struct_7 Uniform
+          %5 = OpVariable %_ptr_StorageBuffer__struct_9 StorageBuffer
+        %325 = OpUndef %uint
+        %326 = OpUndef %bool
+        %327 = OpUndef %float
+        %328 = OpUndef %v2uint
+        %329 = OpUndef %v4uint
+        %330 = OpUndef %v2float
+        %331 = OpUndef %32
+        %332 = OpUndef %v4float
+        %333 = OpUndef %36
+        %334 = OpUndef %v3float
+        %335 = OpUndef %34
+          %2 = OpFunction %void None %37
+        %336 = OpLabel
+        %337 = OpLogicalNot %bool %326
+        %338 = OpShiftRightLogical %uint %325 %uint_4
+        %339 = OpAccessChain %_ptr_StorageBuffer_v4uint %5 %uint_0 %338
+        %340 = OpLoad %v4uint %339
+        %341 = OpCompositeExtract %uint %340 2
+               OpSelectionMerge %342 None
+               OpBranchConditional %337 %343 %342
+        %343 = OpLabel
+        %344 = OpBitcast %float %341
+        %345 = OpFAdd %float %344 %327
+        %346 = OpBitcast %uint %345
+        %347 = OpUndef %uint
+               OpSelectionMerge %348 None
+               OpBranchConditional %337 %349 %348
+        %349 = OpLabel
+               OpBranch %348
+        %348 = OpLabel
+        %350 = OpPhi %uint %325 %343 %347 %349
+               OpBranch %342
+        %342 = OpLabel
+        %351 = OpPhi %uint %325 %336 %350 %348
+        %352 = OpPhi %uint %325 %336 %346 %348
+        %353 = OpAccessChain %_ptr_Uniform_float %4 %uint_0 %uint_201
+        %354 = OpLoad %float %353
+        %355 = OpFUnordNotEqual %bool %float_0 %354
+               OpSelectionMerge %356 None
+               OpBranchConditional %355 %357 %356
+        %357 = OpLabel
+        %358 = OpExtInst %float %1 Fma %327 %354 %327
+        %359 = OpExtInst %float %1 Fma %327 %327 %358
+        %360 = OpFAdd %float %359 %float_n0_100000001
+        %361 = OpExtInst %float %1 FMax %327 %360
+        %362 = OpFAdd %float %327 %361
+        %363 = OpExtInst %float %1 Fma %327 %362 %327
+        %364 = OpFAdd %float %327 %363
+        %365 = OpExtInst %float %1 Fma %327 %364 %327
+        %366 = OpBitcast %uint %365
+               OpBranch %356
+        %356 = OpLabel
+        %367 = OpPhi %uint %352 %342 %366 %357
+               OpSelectionMerge %368 None
+               OpBranchConditional %326 %369 %368
+        %369 = OpLabel
+               OpBranch %370
+        %370 = OpLabel
+               OpLoopMerge %371 %372 None
+               OpBranch %373
+        %373 = OpLabel
+               OpSelectionMerge %374 None
+               OpBranchConditional %326 %375 %374
+        %375 = OpLabel
+               OpSelectionMerge %376 None
+               OpBranchConditional %true %377 %376
+        %377 = OpLabel
+               OpSelectionMerge %378 None
+               OpBranchConditional %true %379 %378
+        %379 = OpLabel
+               OpSelectionMerge %380 None
+               OpBranchConditional %true %381 %380
+        %381 = OpLabel
+               OpSelectionMerge %382 None
+               OpBranchConditional %true %383 %382
+        %383 = OpLabel
+               OpSelectionMerge %384 None
+               OpBranchConditional %true %385 %384
+        %385 = OpLabel
+               OpSelectionMerge %386 None
+               OpBranchConditional %true %387 %386
+        %387 = OpLabel
+               OpSelectionMerge %388 None
+               OpBranchConditional %326 %389 %388
+        %389 = OpLabel
+               OpUnreachable
+        %388 = OpLabel
+               OpBranch %386
+        %386 = OpLabel
+               OpBranch %384
+        %384 = OpLabel
+               OpBranch %382
+        %382 = OpLabel
+               OpBranch %380
+        %380 = OpLabel
+               OpBranch %378
+        %378 = OpLabel
+               OpBranch %376
+        %376 = OpLabel
+               OpBranch %374
+        %374 = OpLabel
+               OpBranchConditional %326 %371 %372
+        %372 = OpLabel
+               OpBranchConditional %326 %370 %371
+        %371 = OpLabel
+               OpBranch %368
+        %368 = OpLabel
+        %390 = OpBitcast %float %351
+        %391 = OpBitcast %float %367
+        %392 = OpFAdd %float %390 %391
+        %393 = OpAccessChain %_ptr_Output_float %3 %uint_0
+               OpStore %393 %392
+               OpReturn
+               OpFunctionEnd
